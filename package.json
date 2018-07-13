@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/BKWLD/nuxt-coffeescript-module/issues"
   },
-  "homepage": "https://github.com/BKWLD/nuxt-coffeescript-module#readme"
+  "homepage": "https://github.com/BKWLD/nuxt-coffeescript-module#readme",
+  "dependencies": {
+    "coffee-loader": "^0.9",
+    "coffeescript": "^2"
+  }
 }
