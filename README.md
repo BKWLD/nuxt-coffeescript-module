@@ -13,3 +13,14 @@ Adds Coffeescript support to your Nuxt app.  This is based on the [official Nuxt
   modules: [ 'nuxt-coffeescript-module' ]
 }
 ```
+
+## Notes
+
+Btw, if you want to write your `nuxt.config.js` in coffeescript, what I've been doing is making my `nuxt.config.js` just: 
+
+```js
+require('coffeescript/register')
+module.exports = require('./nuxt.config.coffee')
+```
+
+And then exporting the real config from `nuxt.config.coffee`.
