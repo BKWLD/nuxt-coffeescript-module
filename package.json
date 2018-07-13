@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-coffeescript-module",
+  "version": "1.0.0",
+  "description": "Adds Coffeescript support to your Nuxt app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BKWLD/nuxt-coffeescript-module.git"
+  },
+  "keywords": [
+    "nuxt",
+    "coffeescript"
+  ],
+  "author": "Bukwild",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BKWLD/nuxt-coffeescript-module/issues"
+  },
+  "homepage": "https://github.com/BKWLD/nuxt-coffeescript-module#readme"
+}
