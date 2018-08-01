@@ -22,6 +22,11 @@ module.exports = function () {
 					loader: 'babel-loader!coffee-loader'
 				}
 			}
+
+			if (rule.loader === 'babel-loader') {
+				rule.options.babelrc = true
+				rule.options.plugins.push('transform-object-rest-spread')
+			}
 		}
 
 		// Add .coffee extension in webpack resolve
