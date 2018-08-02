@@ -8,10 +8,18 @@ module.exports = function () {
 	// Extend build
 	this.extendBuild(config => {
 
-		// Add CoffeeScript loader with Babel transpiling using babelrc
+		// Add CoffeeScript loader with Babel
 		config.module.rules.push({
 			test: /\.coffee$/,
-			loader: 'babel-loader!coffee-loader'
+			use: [
+				{
+					loader: 'babel-loader',
+					options: {
+						plugins: ['transform-object-rest-spread']
+					}
+				},
+				{ loader: 'coffee-loader' }
+			]
 		})
 
 		// Add CoffeeScript loader for vue files (with Babel)
@@ -19,13 +27,13 @@ module.exports = function () {
 			if (rule.loader === 'vue-loader') {
 				rule.options.loaders.coffee = {
 					test: /\.coffee$/,
-					loader: 'babel-loader!coffee-loader'
+					loader: 'babel-loader!coffee-loader',
+					options: {
+						transpile: {
+							plugins: ['transform-object-rest-spread']
+						}
+					}
 				}
-			}
-
-			if (rule.loader === 'babel-loader') {
-				rule.options.babelrc = true
-				rule.options.plugins.push('transform-object-rest-spread')
 			}
 		}
 
