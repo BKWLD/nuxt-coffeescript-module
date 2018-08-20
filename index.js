@@ -11,15 +11,13 @@ module.exports = function () {
 		// Add CoffeeScript loader with Babel
 		config.module.rules.push({
 			test: /\.coffee$/,
-			use: [
-				{
-					loader: 'babel-loader',
-					options: {
-						plugins: ['transform-object-rest-spread']
-					}
-				},
-				{ loader: 'coffee-loader' }
-			]
+			loader: 'coffee-loader',
+			options: {
+				transpile: {
+					presets: ['vue-app'], // The Nuxt default
+					plugins: ['transform-object-rest-spread']
+				}
+			}
 		})
 
 		// Add CoffeeScript loader for vue files (with Babel)
@@ -27,9 +25,10 @@ module.exports = function () {
 			if (rule.loader === 'vue-loader') {
 				rule.options.loaders.coffee = {
 					test: /\.coffee$/,
-					loader: 'babel-loader!coffee-loader',
+					loader: 'coffee-loader',
 					options: {
 						transpile: {
+							presets: ['vue-app'], // The Nuxt default
 							plugins: ['transform-object-rest-spread']
 						}
 					}
