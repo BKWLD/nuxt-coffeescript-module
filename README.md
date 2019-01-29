@@ -1,6 +1,8 @@
 # nuxt-coffeescript-module
 
-Adds Coffeescript support to your Nuxt app.  This is based on the [official Nuxt example](https://github.com/nuxt/nuxt.js/blob/dev/examples/coffeescript/modules/coffeescript.js). 
+Adds Coffeescript support to your Nuxt 1.x app.  This is based on the [official Nuxt example](https://github.com/nuxt/nuxt.js/blob/dev/examples/coffeescript/modules/coffeescript.js).
+
+In Nuxt 2.x, you can just install the `coffeescript coffee-loader` packages and Coffeescript will work.
 
 ## Install
 
