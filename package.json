@@ -26,6 +26,6 @@
     "coffeescript": "^2"
   },
   "peerDependencies": {
-    "nuxt": "^1"
+    "nuxt": "^2"
   }
 }
