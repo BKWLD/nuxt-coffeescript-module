@@ -24,5 +24,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "coffee-loader": "^0.9",
     "coffeescript": "^2"
+  },
+  "peerDependencies": {
+    "nuxt": "^1"
   }
 }
