@@ -8,16 +8,18 @@ export default function () {
 	// Add CoffeeScript loader
 	this.extendBuild((config) => {
 
+		// Lookup the babel config from nuxt
+		const babel = config.module.rules.find(rule => {
+			return String(rule.test) == '/\\.jsx?$/i'
+		})
+
 		// Add CoffeeScript loader
 		config.module.rules.push({
 			test: /\.coffee$/,
-			loader: 'coffee-loader',
-			options: {
-				transpile: {
-					presets: ['@nuxt/babel-preset-app'], // The Nuxt 2 default
-					plugins: ['transform-object-rest-spread']
-				}
-			}
+			use: [
+				babel.use[0], // Get the babel loader object, including it's options
+				{ loader: 'coffee-loader' },
+			]
 		})
 
 		// Add .coffee extension in webpack resolve
