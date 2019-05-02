@@ -4,6 +4,9 @@ export default function () {
 
 	// Add .coffee extension for store, middleware and more
 	this.nuxt.options.extensions.push('coffee')
+	this.nuxt.hook('build:before', (builder) => {
+		builder.supportedExtensions.push('coffee')
+	})
 
 	// Add CoffeeScript loader
 	this.extendBuild((config) => {
