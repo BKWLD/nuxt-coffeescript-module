@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/BKWLD/nuxt-coffeescript-module#readme",
   "dependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "coffee-loader": "^0.9",
     "coffeescript": "^2"
   },
