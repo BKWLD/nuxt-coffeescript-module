@@ -13,8 +13,11 @@ export default function () {
 
 		// Lookup the babel config from nuxt
 		const babel = config.module.rules.find(rule => {
-			return String(rule.test) == '/\\.jsx?$/i'
+			return String(rule.test) == '/\\.m?jsx?$/i'
 		})
+		if (!babel) {
+			throw 'nuxt-coffeescript-module couldn\'t find Nuxt babel config'
+		}
 
 		// Add CoffeeScript loader
 		config.module.rules.push({
